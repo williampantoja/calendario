@@ -6,46 +6,121 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:useBean id="scoresData" scope="request" class="com.iucesmag.model.ScoresData" />
 <!DOCTYPE html>
 <html>
+    <%   int count=0;
+            int count2=1;%>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
-       <%@include file="WEB-INF/fracmentos.jspf" %>
-    <c:choose>
+    <body background="">
         
-        <c:when test="${param.Calendario == 'enero'}">
-            hola enero <br>
+         <%@include file="WEB-INF/fracmentos.jspf" %>
+       <table border="2">
+           <thead>
+               <tr></tr>
+               <tr>
+                        <th>DOM</th>
+                        <th>LUN</th>
+                        <th>MAR</th>
+                        <th>MIE</th>
+                        <th>JUE</th>
+                        <th>VIE</th>
+                        <th>SAB</th>
+               </tr>
+           </thead>
+           <tbody>
+               
+    <c:choose>
+        <c:when test="${scoresData.meses == 'enero'||scoresData.meses == 'marzo'||scoresData.meses == 'mayo'||scoresData.meses == 'julio'||scoresData.meses == 'agosto'||scoresData.meses == 'octubre'||scoresData.meses == 'diciembre'}">  
+           <%
+      
+  
+            while (count<=31)
+            {
+               out.print("<tr>");
+                
+            while(count2<=7 && count<=31 )
+            {
+                int n=0;
+                n=count+count2;
+                if(n<=31){
+                out.print("<td>"+n+"</td>");
+                
+                }
+                count2++;
+                
+            }
+            count=count+count2;
+            count2=1;
+            out.print("<tr>");
+            
+            }
+            %>
         </c:when>
-        <c:when test="${param.name == 'febrerol'}">
-            ncbsdnbcsdbcsdb
+        <c:when test="${scoresData.meses == 'febrero'}">
+            <%
+      
+   
+            while (count<=29)
+            {
+                out.print("<tr>");
+                
+            while(count2<=7 && count<=29 )
+            {
+                int n=0;
+                n=count+count2;
+                if(n<=29){
+                out.println("<td>"+n+"</td>");
+                
+                }
+                count2++;
+                
+            }
+            count=count+count2;
+            count2=1;
+            out.print("</tr>");
+            
+            }
+            %>
+
         </c:when>
-        <c:when test="${param.name == 'marzo'}">
+        <c:when test="${scoresData.meses == 'abril'||scoresData.meses == 'junio'||scoresData.meses == 'septiembre'||scoresData.meses == 'noviembre'}">
+            <%
+
+            while (count<=30)
+            {
+                out.print("<tr>");
+                
+            while(count2<=7 && count<=30 )
+            {
+                int n=0;
+                n=count+count2;
+                if(n<=30){
+                out.print("<td>"+n+"</td>");
+                
+                }
+                count2++;
+                
+            }
+            count=count+count2;
+            count2=1;
+           out.print("</tr>");
+            
+            }
+            %>
         </c:when>
-        <c:when test="${param.name == 'abril'}">
-        </c:when>
-        <c:when test="${param.name == 'mayo'}">
-        </c:when>
-        <c:when test="${param.name == 'junio'}">
-        </c:when>
-        <c:when test="${param.name == 'julio'}">
-        </c:when>
-        <c:when test="${param.name == 'agosto'}">
-        </c:when>
-        <c:when test="${param.name == 'septiembre'}">
-        </c:when>
-        <c:when test="${param.name == 'octubre'}">
-        </c:when>
-        <c:when test="${param.name == 'noviembre'}">
-        </c:when>
-        <c:when test="${param.name == 'dicimbre'}">
-        </c:when>
+       
         <c:otherwise>
         </c:otherwise>
     </c:choose>
- <%          
-        out.print("bienvenido :" + request.getParameter("calendario"));%>
+                 <%          
+        out.print("Este es el mes de:" + request.getParameter("cal"));%>
+               
+           </tbody>
+       </table>
+    
     </body>
 </html>

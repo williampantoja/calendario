@@ -11,32 +11,32 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
+    <body></body>
         
             
         <%@include file="WEB-INF/fracmentos.jspf" %>
         
        
-              <form action="output.jsp" method="POST">
+              <form action="ControllerServlet" method="POST">
         whit mount do you wento to see?<br>
                 
-                    <select name="calendario">
-                    <option>enero</option>
-                    <option>febrero</option>
-                    <option>marzo</option>
-                    <option>abril</option>
-                    <option>mayo</option>
-                    <option>junio</option>
-                    <option>julio</option>
-                    <option>agosto</option>
-                    <option>septiembre</option>
-                    <option>octubre</option>
-                    <option>noviembre</option>
-                    <option>diciemre</option>
+                    <select  name="cal">
+                <option value="enero">Enero</option>
+                <option value="febrero">Febrero</option>
+                <option value="marzo">Marzo</option>
+                <option value="abril">Abril</option>
+                <option value="mayo">Mayo</option>
+                <option value="junio">Junio</option>
+                <option value="julio">Julio</option>
+                <option value="agosto">Agosto</option>
+                <option value="septiembre">Septiembre</option>
+                <option value="octubre">Octubre</option>
+                <option value="noviembre">Noviembre</option>
+                <option value="diciembre">Diciembre</option>
                 </select>
               
             <br>
-            <input type="submit" value="submit" />
+            <input type="submit" value="MOSTRAR" />
             
         </form>
     </body>
