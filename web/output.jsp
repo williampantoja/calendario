@@ -12,13 +12,16 @@
     <%   int count=0;
             int count2=1;%>
     <head>
+        <link href="folder/outputcss.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body background="">
+    <body>
+        
+        <!--<img src="" alt=""/>-->
         
          <%@include file="WEB-INF/fracmentos.jspf" %>
-       <table border="2">
+       <table border="2" BGCOLOR="white">
            <thead>
                <tr></tr>
                <tr>

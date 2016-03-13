@@ -1,5 +1,5 @@
 <%-- 
-    Document   : newjsp
+    Document   : index
     Created on : 19/02/2016, 10:43:48 AM
     Author     : Pantoja
 --%>
@@ -8,16 +8,20 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="folder/cssindex.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body></body>
-        
+    
+   <body  >
+         
+         
             
         <%@include file="WEB-INF/fracmentos.jspf" %>
         
        
-              <form action="ControllerServlet" method="POST">
+        <form action="ControllerServlet" method="POST">
+                 
         whit mount do you wento to see?<br>
                 
                     <select  name="cal">
